@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const GET_CHARACTERS = gql`
-  query {
-    characters {
+  query characters($page: Int, $filter: FilterCharacter) {
+    characters(page: $page, filter: $filter) {
       results {
         name
         species
